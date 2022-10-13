@@ -1,0 +1,10 @@
+package com.security.jwtExample.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.security.jwtExample.domain.Role;
+
+public interface RoleRepo extends JpaRepository<Role, Long>{
+
+	findBy
+}

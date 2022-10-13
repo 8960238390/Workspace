@@ -1,0 +1,10 @@
+package exercise;
+
+public class Main {
+
+	
+	private static interface Drawble{
+		
+		int getNumberOfCorner();
+	}
+}

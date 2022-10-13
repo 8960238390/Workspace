@@ -1,0 +1,63 @@
+package com.security.jwtExample.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.security.jwtExample.domain.Role;
+import com.security.jwtExample.domain.User;
+import com.security.jwtExample.repo.RoleRepo;
+import com.security.jwtExample.repo.UserRepo;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Transactional
+@Slf4j
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	private UserRepo userRepo;
+	@Autowired
+	private RoleRepo roleRepo;
+
+	@Override
+	public User saveUser(User user) {
+
+		if (user != null) {
+			userRepo.save(user);
+		}
+
+		return user;
+	}
+
+	@Override
+	public Role saveRole(Role role) {
+		
+		if (role!=null) {
+			roleRepo.save(role);
+		}
+		return role;
+	}
+
+	@Override
+	public void addRoleToUser(String userName, String roleName) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public User getUser(String userName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<User> getUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

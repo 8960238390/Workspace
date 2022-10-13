@@ -1,0 +1,15 @@
+package com.seleniumexpress.trans.spring_transactional_01.service;
+
+import org.springframework.stereotype.Service;
+
+import com.seleniumexpress.trans.spring_transactional_01.repo.ProductRepo;
+
+@Service
+public class ProductService {
+
+	private ProductRepo productRepo;
+	
+	public ProductService(ProductRepo productRepo) {
+		this.productRepo=productRepo;
+	}
+}

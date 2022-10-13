@@ -1,0 +1,37 @@
+package com.seleniumexpress.trans.spring_transactional_01.service;
+
+import org.springframework.stereotype.Service;
+
+import com.seleniumexpress.trans.spring_transactional_01.dto.Products;
+import com.seleniumexpress.trans.spring_transactional_01.repo.ProductRepo;
+
+@Service
+public class ProductService {
+
+	private ProductRepo productRepo;
+	
+	public ProductService(ProductRepo productRepo) {
+		this.productRepo=productRepo;
+	}
+	
+	public void saveProductInfo() {
+		
+		Products products = new Products();		
+		
+		for(int i=1 ; i<=10 ; i++) {
+			
+			if(i==5) {
+				throw new RuntimeException("Our own thrown exception");
+			}//if
+			
+			products.setId(i);
+			products.setName("Test Product "+i);
+			
+			productRepo.saveProduct(products);
+			
+			
+		}//for
+		
+		System.out.println("Service : saveProductInfo()" );
+	}//saveProductInfo()
+}

@@ -1,0 +1,74 @@
+package exercise;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+
+	public static void main(String[] args) throws ClassNotFoundException{
+		
+		Class<String> stringClass = String.class;
+		
+		Map<String, Integer> mapObject = new HashMap<>();
+		Class<?> hashMapClass = mapObject.getClass();
+		
+		Class<?> squareClass = Class.forName("exercise.Main$Square");
+		
+		var circleObject = new Drawble() {
+			@Override
+			public int getNumberOfCorner() {
+				return 0;
+			}
+		};
+		
+		//printClassInfo(stringClass,hashMapClass,squareClass);
+		
+		printClassInfo(Collection.class, boolean.class, int [][].class, Color.class , circleObject.getClass());		
+	}// main
+ 
+	private static void printClassInfo(Class<?>... classes) {
+
+		for (Class<?> clazz : classes) {
+
+			System.out.println(String.format("Class name : %s, Class package name %s", clazz.getSimpleName(),
+					clazz.getPackageName()));
+
+			Class<?>[] implementedInterfaces = clazz.getInterfaces();
+
+			for (Class<?> implementedInterface : implementedInterfaces) {
+
+				System.out.println(String.format("class %s extends or implements %s", clazz.getSimpleName(),
+						implementedInterface.getSimpleName()));
+			} // inner-for
+
+			System.out.println("Is Array : "+clazz.isArray());
+			System.out.println("Is primitive : "+clazz.isPrimitive());
+			System.out.println("Is enum : "+clazz.isEnum());
+			System.out.println("Is interface : "+clazz.isInterface());
+			System.out.println("Is Anonymous : "+clazz.isAnonymousClass());
+			
+			System.out.println();
+			System.out.println();
+		} // outer-for
+	}
+
+	private static interface Drawble {
+
+		int getNumberOfCorner();
+	}
+
+	private static class Square implements Drawble {
+
+		@Override
+		public int getNumberOfCorner() {
+
+			return 4;
+		}
+
+	}// Square -class
+
+	private enum Color {
+		BLUE, RED, GREEEN
+	}
+}

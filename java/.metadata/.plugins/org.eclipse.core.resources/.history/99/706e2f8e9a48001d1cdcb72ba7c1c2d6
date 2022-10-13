@@ -1,0 +1,5 @@
+package privateConstructorWithReflection;
+
+public class Main {
+
+}

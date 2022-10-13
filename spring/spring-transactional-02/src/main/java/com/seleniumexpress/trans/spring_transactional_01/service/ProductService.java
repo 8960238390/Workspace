@@ -1,0 +1,37 @@
+package com.seleniumexpress.trans.spring_transactional_01.service;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.seleniumexpress.trans.spring_transactional_01.dto.Products;
+import com.seleniumexpress.trans.spring_transactional_01.repo.ProductRepo;
+
+@Service
+public class ProductService {
+
+	private ProductRepo productRepo;
+	
+	public ProductService(ProductRepo productRepo) {
+		this.productRepo=productRepo;
+	}
+	
+	//@Transactional(noRollbackFor = RuntimeException.class)
+	//@Transactional(rollbackFor = Exception.class)
+	@Transactional
+	public void saveProductInfo() /*throws Exception*/{
+		
+		  Products products = new Products();
+		 
+		for(int i=1 ; i<=10 ; i++) {
+			
+			products.setId(i);
+			products.setName("Test Product "+i);
+			
+			productRepo.saveProduct(products);
+			
+			
+		}//for
+		
+
+	}//saveProductInfo()
+}

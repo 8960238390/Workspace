@@ -1,0 +1,6 @@
+server.port=9090
+
+app.username=sharif
+app.pazzword=sharif123
+
+secret_key = lsnsklvnskvmnslkv

@@ -1,0 +1,27 @@
+package com.seleniumexpress.trans.spring_transactional_01;
+
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.seleniumexpress.trans.spring_transactional_01.config.ProductConfig;
+import com.seleniumexpress.trans.spring_transactional_01.service.ProductService;
+
+/**
+ * Transaction
+ *
+ */
+public class App 
+{
+    public static void main( String[] args ) throws Exception
+    {
+         ConfigurableApplicationContext applicationContext = new AnnotationConfigApplicationContext(ProductConfig.class);
+         
+         applicationContext.registerShutdownHook();
+         
+         ProductService productService = applicationContext.getBean("productService",ProductService.class);
+         
+         productService.saveProductInfo();
+         
+         applicationContext.close();
+    }
+}

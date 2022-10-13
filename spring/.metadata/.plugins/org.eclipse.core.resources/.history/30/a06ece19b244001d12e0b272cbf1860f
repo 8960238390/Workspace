@@ -1,0 +1,19 @@
+package com.seleniumexpress.trans.spring_transactional_01.aop;
+
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
+
+@Aspect
+public class LoggingAspect {
+
+	@Pointcut("within(com..service.*) || within(com..repo.*)")
+	public void logMethodpointcut() {
+		
+	}
+	
+	@Around("logMethodpointcut()")
+	public Object LogMethod() {
+		
+	}
+}

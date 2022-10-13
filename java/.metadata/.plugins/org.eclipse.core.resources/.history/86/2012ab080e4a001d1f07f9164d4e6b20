@@ -1,0 +1,14 @@
+package exercise;
+
+public class TempTest {
+
+	
+	public static void m1() {
+		System.out.println("m1 method call");
+	}
+	
+	public static void main(String[] args) {
+		
+		
+	}
+}

@@ -1,0 +1,19 @@
+package exercise;
+
+public class TempTest {
+
+	
+	public void m2() {
+		System.out.println("m1 method call");
+	}
+	
+	public static void main(String[] args) {
+		
+		I1 i = TempTest::m2;
+		i.m1();
+	}
+}
+
+interface I1{
+	public void m1();
+}

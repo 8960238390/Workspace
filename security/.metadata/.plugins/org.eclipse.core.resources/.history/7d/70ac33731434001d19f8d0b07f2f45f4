@@ -1,0 +1,5 @@
+package com.security.jwtExample.repo;
+
+public interface UserRepo {
+
+}

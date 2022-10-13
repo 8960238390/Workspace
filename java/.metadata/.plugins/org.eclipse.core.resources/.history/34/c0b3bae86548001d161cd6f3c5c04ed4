@@ -1,0 +1,30 @@
+package exercise;
+
+public class Test {
+
+	private static Test test;
+	
+	private String name;
+	private int age;
+	
+	private Test(String name, int age) {
+		this.name=name;
+		this.age=age;
+		
+		if(test==null) {
+			test=this;
+		}
+	}//Test(-,-)
+	
+	public static Test createInstnce() {
+		
+		return test;
+	}
+	
+	public static void main(String[] args) {
+		
+		Test test1 = new Test("sharif",28);
+		
+		Test test2 = new Test("Nawab",28);
+	}
+}

@@ -1,0 +1,8 @@
+package com.seleniumexpress.trans.spring_transactional_01.aop;
+
+import org.aspectj.lang.annotation.Aspect;
+
+@Aspect
+public class LoggingAspect {
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Demo.AddCoursesForMaryDemo&apos; to &apos;FetchinStudentAndAssociatedCourses&apos;&#x0D;&#x0A;- Original project: &apos;hb-many-to-many&apos;&#x0D;&#x0A;- Original element: &apos;Demo.AddCoursesForMaryDemo&apos;&#x0D;&#x0A;- Renamed element: &apos;Demo.FetchinStudentAndAssociatedCourses&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;AddCoursesForMaryDemo&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;Demo{AddCoursesForMaryDemo.java[AddCoursesForMaryDemo" matchStrategy="1" name="FetchinStudentAndAssociatedCourses" qualified="false" references="true" similarDeclarations="false" stamp="1658147087021" textual="false" version="1.0"/>
+</session>

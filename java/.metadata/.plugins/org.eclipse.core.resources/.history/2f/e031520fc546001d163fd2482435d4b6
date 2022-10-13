@@ -1,0 +1,30 @@
+package exercise;
+
+public class ConstructorExample {
+
+	public static class Person {
+
+		private final Address address;
+		private final String name;
+		private final int age;
+
+		public Person() {
+
+			this.name = "anonymous";
+			this.age = 0;
+			this.address = null;
+		}
+	}
+
+	public static class Address {
+
+		private String street;
+		private int number;
+
+		public Address(String street, int number) {
+
+			this.street = street;
+			this.number = number;
+		}
+	}
+}

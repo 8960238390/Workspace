@@ -1,0 +1,5 @@
+package com.seleniumexpress.trans.spring_transactional_01.aop;
+
+public class LoggingAspect {
+
+}

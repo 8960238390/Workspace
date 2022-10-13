@@ -1,0 +1,33 @@
+package exercise;
+
+public class Test {
+
+	
+	
+	public static void main(String[] args) {
+		
+		
+	}
+}//Test
+
+Student{
+    private static Student studnet;
+	
+	private String name;
+	private int age;
+	
+	private Student(String name, int age) {
+		this.name=name;
+		this.age=age;
+		
+		if(test==null) {
+			test=this;
+		}
+	}//Test(-,-)
+	
+	public static Test createInstnce() {
+		
+		return test;
+	}
+	
+}

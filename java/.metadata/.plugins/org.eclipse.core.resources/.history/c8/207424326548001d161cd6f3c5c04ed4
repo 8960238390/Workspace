@@ -1,0 +1,28 @@
+package exercise;
+
+public class Test {
+
+	private static Test test;
+	
+	private String name;
+	private int age;
+	
+	public Test(String name, int age) {
+		this.name=name;
+		this.age=age;
+		
+		if(test==null) {
+			test=this;
+		}
+	}//Test(-,-)
+	
+	public static Test createInstnce() {
+		
+		return test;
+	}
+	
+	public static void main(String[] args) {
+		
+		
+	}
+}

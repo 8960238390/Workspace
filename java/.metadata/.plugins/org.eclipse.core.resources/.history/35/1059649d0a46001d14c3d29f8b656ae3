@@ -1,0 +1,30 @@
+package exercise;
+
+public class Main {
+
+	
+	private static void printClassInfo(Class<?> ... classes) {
+		
+	}
+	
+	private static interface Drawble{
+		
+		int getNumberOfCorner();
+	}
+	
+	private static class Square implements Drawble{
+
+		@Override
+		public int getNumberOfCorner() {
+		
+			return 4;
+		}
+		
+	}//Square -class
+	
+	private enum Color{
+		BLUE,
+		RED,
+		GREEEN
+	}
+}

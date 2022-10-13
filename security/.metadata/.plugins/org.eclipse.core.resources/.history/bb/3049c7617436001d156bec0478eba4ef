@@ -1,0 +1,80 @@
+package com.security.jwtExample.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.security.jwtExample.domain.Role;
+import com.security.jwtExample.domain.User;
+import com.security.jwtExample.repo.RoleRepo;
+import com.security.jwtExample.repo.UserRepo;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Transactional
+@Slf4j
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	private UserRepo userRepo;
+	@Autowired
+	private RoleRepo roleRepo;
+
+	@Override
+	public User saveUser(User user) {
+
+		log.info("Saving new user to database");
+
+		if (user != null) {
+			userRepo.save(user);
+
+		}
+
+		return user;
+	}
+
+	@Override
+	public Role saveRole(Role role) {
+
+		log.info("Saving new role to database");
+		if (role != null) {
+			roleRepo.save(role);
+		}
+		return role;
+	}
+
+	@Override
+	public boolean addRoleToUser(String userName, String roleName) {
+
+		log.info("adding given role to given user");
+		boolean status = false;
+
+		User user = userRepo.findByUsername(userName);
+		Role role = roleRepo.findByName(roleName);
+
+		if (user != null && role != null) {
+			status = user.getRoles().add(role);
+		}
+
+		return status;
+	}
+
+	@Override
+	public User getUser(String userName) {
+
+		log.info("Retriving user by given username");
+		return userRepo.findByUsername(userName);
+
+	}
+
+	@Override
+	public List<User> getUsers() {
+
+		log.info("Retriving all user from database");
+		return userRepo.findAll();
+	}
+
+}

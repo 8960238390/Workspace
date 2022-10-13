@@ -1,0 +1,5 @@
+package com.security.jwtExample.service;
+
+public interface UserService {
+
+}
